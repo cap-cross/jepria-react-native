@@ -25,9 +25,12 @@ const ReactApp = function (props) {
           view: props.viewDetails,
           list: props.viewList,
         }}
-      />
+      /> */}
+      <Text>
+        Toolbar
+      </Text>
 
-      <Form
+      {/* <Form
         workstate={workstate}
         actions={{
           select: props.select,
@@ -35,12 +38,12 @@ const ReactApp = function (props) {
         }}
         items={items}
         currentIndex={currentIndex}
-      />
-
-      <Statusbar workstate={workstate} /> */}
+      /> */}
       <Text>
-        RootApp!
+        Form
       </Text>
+
+      <Statusbar workstate={workstate} />
     </View>
   );
 }
