@@ -3,8 +3,6 @@ import {View} from 'react-native';
 
 const style = {
   backgroundColor: 'transparent',
-  border: 'none',
-  cursor: 'pointer',
 };
 
 export default function(props) {
@@ -14,9 +12,6 @@ export default function(props) {
   }
 
   return (
-    // <button onClick={handleClick} disabled={props.disabled} style={style}>
-    //   {props.children}
-    // </button>
     <View onClick={handleClick} disabled={props.disabled} style={style}>
       {props.children}
     </View>

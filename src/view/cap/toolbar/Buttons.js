@@ -1,5 +1,4 @@
 import React from 'react';
-import {Text} from 'react-native';
 import ToolbarButton from '../../toolbar/ToolbarButton';
 import ButtonImage from './ButtonImage';
 import {Workstate} from '../../../state/cap/workstate';
