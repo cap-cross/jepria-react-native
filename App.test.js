@@ -1,9 +1,9 @@
 import React from 'react';
-import App from './App';
-
-import renderer from 'react-test-renderer';
+import ReactDOM from 'react-dom';
+import App from './view/App';
 
 it('renders without crashing', () => {
-  const rendered = renderer.create(<App />).toJSON();
-  expect(rendered).toBeTruthy();
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
+  ReactDOM.unmountComponentAtNode(div);
 });
