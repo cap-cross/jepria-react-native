@@ -5,7 +5,7 @@ export default function(props) {
   return (
     <View>
       <Text>
-        ButtonImage
+        ButtonImage_{props.alt}
       </Text>
     </View>
   );

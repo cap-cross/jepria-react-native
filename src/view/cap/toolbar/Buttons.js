@@ -1,4 +1,5 @@
 import React from 'react';
+import {Text} from 'react-native';
 import ToolbarButton from '../../toolbar/ToolbarButton';
 import ButtonImage from './ButtonImage';
 import {Workstate} from '../../../state/cap/workstate';
@@ -74,9 +75,12 @@ const ListButton = (props) => {
   const isDisabled = !(workstate === Workstate.ADD ||
                        workstate === Workstate.EDIT ||
                        workstate === Workstate.VIEW_DETAILS);
+                       const className = isDisabled ? "disabled" : "enabled"
 
   return (
-      <ToolbarButton disabled={isDisabled} onClick={props.onClick}>Список</ToolbarButton>
+      <ToolbarButton disabled={isDisabled} onClick={props.onClick}>
+        <ButtonImage src="./toolbar/list.png" alt="Список" className={className}/>
+      </ToolbarButton>
   );
 };
 
@@ -95,9 +99,12 @@ const SearchButton = (props) => {
 const FindButton = (props) => {
   const workstate = props.workstate;
   const isDisabled = (workstate) => !(workstate === Workstate.SEARCH);
+  const className = isDisabled ? "disabled" : "enabled"
 
   return (
-      <ToolbarButton disabled={isDisabled(workstate)} onClick={props.onClick}>Найти</ToolbarButton>
+      <ToolbarButton disabled={isDisabled(workstate)} onClick={props.onClick}>
+        <ButtonImage src="./toolbar/find.png" alt="Найти" className={className}/>
+      </ToolbarButton>
   );
 };
 

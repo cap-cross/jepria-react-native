@@ -12,7 +12,7 @@ const ReactApp = function (props) {
 
   return (
     <View>
-      {/* <Toolbar
+      <Toolbar
         workstate={workstate}
         actions={{
           add: props.add,
@@ -25,7 +25,7 @@ const ReactApp = function (props) {
           view: props.viewDetails,
           list: props.viewList,
         }}
-      /> */}
+      />
       <Text>
         Toolbar
       </Text>
