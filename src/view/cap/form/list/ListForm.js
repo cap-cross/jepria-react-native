@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {View, Text} from 'react-native';
 import PropTypes from 'prop-types';
 import EmptyView from './EmptyView';
 // import ReactTable from "react-table";
@@ -78,9 +79,9 @@ class ListForm extends Component {
     }
 
     const result = (
-      <div>
+      <View>
         {contentView}
-      </div>
+      </View>
   );
 
     return result;

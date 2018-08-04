@@ -30,7 +30,7 @@ const ReactApp = function (props) {
         Toolbar
       </Text>
 
-      {/* <Form
+      <Form
         workstate={workstate}
         actions={{
           select: props.select,
@@ -38,10 +38,7 @@ const ReactApp = function (props) {
         }}
         items={items}
         currentIndex={currentIndex}
-      /> */}
-      <Text>
-        Form
-      </Text>
+      />
 
       <Statusbar workstate={workstate} />
     </View>
