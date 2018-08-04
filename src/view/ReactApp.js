@@ -26,9 +26,6 @@ const ReactApp = function (props) {
           list: props.viewList,
         }}
       />
-      <Text>
-        Toolbar
-      </Text>
 
       <Form
         workstate={workstate}
