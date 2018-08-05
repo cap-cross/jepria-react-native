@@ -53,34 +53,22 @@ export default function(props) {
   return (
     // <View className="jepRia-ToolBar">
     //   <AddButton workstate={wrkst} onClick={actions.add}/>
-    //   <AddButton workstate={wrkst} onClick={actions.add}/>
     //   <SaveButton workstate={wrkst} onClick={actions.save}/>
     //   <EditButton workstate={wrkst} onClick={actions.edit}/>
-    //   {/* <DeleteButton workstate={wrkst} onClick={actions.remove}/>
+    //   <DeleteButton workstate={wrkst} onClick={actions.remove}/>
     //   <ViewButton workstate={wrkst} onClick={actions.view}/>
     //   <ListButton workstate={wrkst} onClick={actions.list}/>
     //   <SearchButton workstate={wrkst} onClick={actions.search}/>
-    //   <FindButton workstate={wrkst} onClick={actions.find}/> */}
+    //   <FindButton workstate={wrkst} onClick={actions.find}/>
     // </View>
     <Header style={styles.header}>
-    <Left>
-      <Button onPress={this.goBack} transparent>
-        <Icon name="arrow-back" style={styles.icon} />
-      </Button>
-    </Left>
-    <Body>
-      <Title style={styles.title}>Задача</Title>
-    </Body>
-    <Right>
-      <Button
-        onPress={() => {
-          this.removeTask(task);
-        }}
-        transparent
-      >
-        <Icon name="trash" style={styles.icon} />
-      </Button>
-    </Right>
+      <Left>
+        <AddButton styles={styles} workstate={wrkst} onClick={actions.add}/>
+        {/* <SaveButton styles={styles} workstate={wrkst} onClick={actions.add}/> */}
+      </Left>
+      <Right>
+        <DeleteButton styles={styles} workstate={wrkst} onClick={actions.remove}/>
+      </Right>
   </Header>
 
   );

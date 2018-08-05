@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from 'react-native';
+import { Container, Content, Header, Body, Title, Button, Left, Icon, Right, Toast } from 'native-base';
 
 import ToolbarButton from '../../toolbar/ToolbarButton';
 import ButtonImage from './ButtonImage';
@@ -7,15 +7,52 @@ import {Workstate} from '../../../state/cap/workstate';
 
 const AddButton = props => {
   const workstate = props.workstate;
+  const styles = props.styles;
+  
   const isDisabled = workstate === Workstate.ADD;
-  const className = isDisabled ? "disabled" : "enabled"
+  return (
+      <ToolbarButton
+        action='add'
+        styles={styles}
+        disabled={isDisabled}
+        onClick={props.onClick}
+      />
+  );
+}
+
+const DeleteButton = props => {
+  const workstate = props.workstate;
+  const styles = props.styles;
+  
+  const isDisabled = (workstate === Workstate.ADD ||
+                      workstate === Workstate.SEARCH ||
+                      workstate === Workstate.VIEW_LIST);
 
   return (
-      <ToolbarButton title="Создать" disabled={isDisabled} onClick={props.onClick}>
-         {/* <ButtonImage src="./toolbar/add.png" alt="Создать" className={className}/> */}
-      </ToolbarButton>
+      <ToolbarButton
+      action='delete'
+      styles={styles}
+      disabled={isDisabled}
+      onClick={props.onClick}
+    />
+
   );
 };
+
+// const DeleteButton = (props) => {
+//   const workstate = props.workstate;
+
+//   const isDisabled = (workstate === Workstate.ADD ||
+//                       workstate === Workstate.SEARCH ||
+//                       workstate === Workstate.VIEW_LIST);
+//   const className = isDisabled ? "disabled" : "enabled"
+
+//   return (
+//       <ToolbarButton disabled={isDisabled} onClick={props.onClick}>
+//         <ButtonImage src="./toolbar/delete.png" alt="Удалить" className={className}/>
+//       </ToolbarButton>
+//   );
+// };
 
 const SaveButton = (props) => {
   const workstate = props.workstate;
@@ -43,21 +80,6 @@ const EditButton = (props) => {
       </ToolbarButton>
   );
 };
-
-// const DeleteButton = (props) => {
-//   const workstate = props.workstate;
-
-//   const isDisabled = (workstate === Workstate.ADD ||
-//                       workstate === Workstate.SEARCH ||
-//                       workstate === Workstate.VIEW_LIST);
-//   const className = isDisabled ? "disabled" : "enabled"
-
-//   return (
-//       <ToolbarButton disabled={isDisabled} onClick={props.onClick}>
-//         <ButtonImage src="./toolbar/delete.png" alt="Удалить" className={className}/>
-//       </ToolbarButton>
-//   );
-// };
 
 // const ViewButton = (props) => {
 //   const workstate = props.workstate;
@@ -110,4 +132,4 @@ const EditButton = (props) => {
 // };
 
 //export {AddButton, SaveButton, EditButton, ViewButton, ListButton, SearchButton, FindButton, DeleteButton};
-export {AddButton, SaveButton, EditButton};
+export {AddButton, SaveButton, EditButton, DeleteButton};
