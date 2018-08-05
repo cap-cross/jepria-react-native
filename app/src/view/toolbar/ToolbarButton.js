@@ -37,10 +37,6 @@ const actionToIconName = action => {
 };
 
 export default function(props) {
-  const handleClick = e => {
-    e.preventDefault();
-    props.onClick();
-  };
   return props.disabled ? null : 
     <Button
       onPress={() => {
