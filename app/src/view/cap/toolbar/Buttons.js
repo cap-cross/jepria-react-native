@@ -1,6 +1,5 @@
 import React from 'react';
 import ToolbarButton from '../../toolbar/ToolbarButton';
-import ButtonImage from './ButtonImage';
 import {Workstate} from '../../../state/cap/workstate';
 
 const AddButton = props => {
@@ -36,7 +35,7 @@ const DeleteButton = props => {
 
   return (
       <ToolbarButton
-        action='delete'
+        action='remove'
         styles={props.styles}
         disabled={isDisabled}
         onClick={props.onClick}
@@ -74,43 +73,48 @@ const ViewButton = (props) => {
   );
 };
 
-// const ListButton = (props) => {
-//   const workstate = props.workstate;
-//   const isDisabled = !(workstate === Workstate.ADD ||
-//                        workstate === Workstate.EDIT ||
-//                        workstate === Workstate.VIEW_DETAILS);
-//                        const className = isDisabled ? "disabled" : "enabled"
+const ListButton = (props) => {
+  const workstate = props.workstate;
+  const isDisabled = !(workstate === Workstate.ADD ||
+                       workstate === Workstate.EDIT ||
+                       workstate === Workstate.VIEW_DETAILS);
 
-//   return (
-//       <ToolbarButton disabled={isDisabled} onClick={props.onClick}>
-//         <ButtonImage src="./toolbar/list.png" alt="Список" className={className}/>
-//       </ToolbarButton>
-//   );
-// };
+  return (
+    <ToolbarButton
+      action='list'
+      styles={props.styles}
+      disabled={isDisabled}
+      onClick={props.onClick}
+    />
+  );
+};
 
-// const SearchButton = (props) => {
-//   const workstate = props.workstate;
-//   const isDisabled = workstate === Workstate.SEARCH;
-//   const className = isDisabled ? "disabled" : "enabled"
+const SearchButton = (props) => {
+  const workstate = props.workstate;
+  const isDisabled = workstate === Workstate.SEARCH;
 
-//   return (
-//       <ToolbarButton disabled={isDisabled} onClick={props.onClick}>
-//         <ButtonImage src="./toolbar/search.png" alt="Поиск" className={className}/>
-//       </ToolbarButton>
-//   );
-// };
+  return (
+    <ToolbarButton
+      action='search'
+      styles={props.styles}
+      disabled={isDisabled}
+      onClick={props.onClick}
+    />
+  );
+};
 
-// const FindButton = (props) => {
-//   const workstate = props.workstate;
-//   const isDisabled = (workstate) => !(workstate === Workstate.SEARCH);
-//   const className = isDisabled ? "disabled" : "enabled"
+const FindButton = (props) => {
+  const workstate = props.workstate;
+  const isDisabled = !(workstate === Workstate.SEARCH);
 
-//   return (
-//       <ToolbarButton disabled={isDisabled(workstate)} onClick={props.onClick}>
-//         <ButtonImage src="./toolbar/find.png" alt="Найти" className={className}/>
-//       </ToolbarButton>
-//   );
-// };
+  return (
+    <ToolbarButton
+      action='find'
+      styles={props.styles}
+      disabled={isDisabled}
+      onClick={props.onClick}
+    />
+  );
+};
 
-//export {AddButton, SaveButton, EditButton, ViewButton, ListButton, SearchButton, FindButton, DeleteButton};
-export {AddButton, SaveButton, EditButton, ViewButton, DeleteButton};
+export {AddButton, SaveButton, EditButton, ViewButton, ListButton, SearchButton, FindButton,  DeleteButton};

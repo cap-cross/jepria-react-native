@@ -1,6 +1,5 @@
 import React from "react";
-//import { Button, View } from "react-native";
-import { Container, Content, Header, Body, Title, Button, Left, Icon, Right, Toast } from 'native-base';
+import { Button, Icon } from 'native-base';
 
 const style = {
   backgroundColor: "transparent",
@@ -20,7 +19,16 @@ const actionToIconName = action => {
     case 'view': {
       return 'ios-eye';
     }
-    case 'delete': {
+    case 'list': {
+      return 'ios-list';
+    }
+    case 'search': {
+      return 'ios-search';
+    }
+    case 'find': {
+      return 'glasses';
+    }
+    case 'remove': {
       return 'trash';
     }
     default:

@@ -51,23 +51,16 @@ export default function(props) {
 
   const styles = this.getStyles();
   return (
-    // <View className="jepRia-ToolBar">
-    //   <AddButton workstate={wrkst} onClick={actions.add}/>
-    //   <SaveButton workstate={wrkst} onClick={actions.save}/>
-    //   <EditButton workstate={wrkst} onClick={actions.edit}/>
-    //   <DeleteButton workstate={wrkst} onClick={actions.remove}/>
-    //   <ViewButton workstate={wrkst} onClick={actions.view}/>
-    //   <ListButton workstate={wrkst} onClick={actions.list}/>
-    //   <SearchButton workstate={wrkst} onClick={actions.search}/>
-    //   <FindButton workstate={wrkst} onClick={actions.find}/>
-    // </View>
     <Header style={styles.header}>
       <Right>
         <AddButton styles={styles} workstate={wrkst} onClick={actions.add}/>
         <SaveButton styles={styles} workstate={wrkst} onClick={actions.save}/>
         <EditButton styles={styles} workstate={wrkst} onClick={actions.edit}/>
         <ViewButton styles={styles} workstate={wrkst} onClick={actions.view}/>
+        <ListButton styles={styles} workstate={wrkst} onClick={actions.list}/>
         <DeleteButton styles={styles} workstate={wrkst} onClick={actions.remove}/>
+        <SearchButton styles={styles} workstate={wrkst} onClick={actions.search}/>
+        <FindButton styles={styles} workstate={wrkst} onClick={actions.find}/>
       </Right>
     </Header>
   );
