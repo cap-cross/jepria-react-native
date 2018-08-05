@@ -1,6 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
-import { Container, Content, Header, Body, Title, Button, Left, Icon, Right, Toast } from 'native-base';
+import { Header, Right } from 'native-base';
 
 import {AddButton, SaveButton, EditButton, ViewButton, ListButton, SearchButton, FindButton, DeleteButton} from '.';
 
@@ -9,15 +8,8 @@ export default function(props) {
   const wrkst = props.workstate;
 
   getStyles = () => ({
-    content: {
-      justifyContent: 'space-between',
-      padding: 8,
-    },
-    inputGroup: {
-      flex: 0.9,
-    },
     header: {
-      backgroundColor: 'blue',
+      backgroundColor: 'darkgray',
     },
     title: {
       color: '#FFFFFF',
@@ -25,27 +17,6 @@ export default function(props) {
     icon: {
       color: '#FFFFFF',
       fontSize: 30,
-    },
-    editButton: {
-      backgroundColor: 'green',
-      height: 56,
-      width: 56,
-      borderRadius: 28,
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'absolute',
-      bottom: 30,
-      right: 30,
-      shadowColor: '#000000',
-      shadowOpacity: 0.8,
-      shadowRadius: 2,
-      shadowOffset: {
-        height: 1,
-        width: 0,
-      },
-    },
-    editButtonIcon: {
-      color: 'white',
     },
   });
 
