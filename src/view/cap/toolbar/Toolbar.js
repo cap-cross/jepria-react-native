@@ -11,11 +11,11 @@ export default function(props) {
       <AddButton workstate={wrkst} onClick={actions.add}/>
       <SaveButton workstate={wrkst} onClick={actions.save}/>
       <EditButton workstate={wrkst} onClick={actions.edit}/>
-      <DeleteButton workstate={wrkst} onClick={actions.remove}/>
+      {/* <DeleteButton workstate={wrkst} onClick={actions.remove}/>
       <ViewButton workstate={wrkst} onClick={actions.view}/>
       <ListButton workstate={wrkst} onClick={actions.list}/>
       <SearchButton workstate={wrkst} onClick={actions.search}/>
-      <FindButton workstate={wrkst} onClick={actions.find}/>
+      <FindButton workstate={wrkst} onClick={actions.find}/> */}
     </View>
   );
 };

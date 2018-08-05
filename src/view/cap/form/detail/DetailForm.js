@@ -1,4 +1,6 @@
 import React from 'react';
+import {View} from 'react-native';
+
 import Field from './Field';
 
 const style = {
@@ -10,11 +12,11 @@ export default function (props) {
   const currentItem = props.currentItem;
 
   return (
-    <div style={style}>
-      <Field label="Идентификатор" workstate={workstate}>{currentItem ? currentItem.id : ""}</Field>
+    <View>
+      {/* <Field label="Идентификатор" workstate={workstate}>{currentItem ? currentItem.id : ""}</Field>
       <Field label="Наименование" workstate={workstate}>{currentItem ? currentItem.name : ""}</Field>
       <Field label="Наименование английское" workstate={workstate}>{currentItem ? currentItem.nameEn : ""}</Field>
-      <Field label="Описание" workstate={workstate}>{currentItem ? currentItem.description : ""}</Field>
-    </div>
+      <Field label="Описание" workstate={workstate}>{currentItem ? currentItem.description : ""}</Field> */}
+    </View>
   );
 };
