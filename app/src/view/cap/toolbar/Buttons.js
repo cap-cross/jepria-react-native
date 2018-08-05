@@ -1,28 +1,34 @@
 import React from 'react';
-import { Container, Content, Header, Body, Title, Button, Left, Icon, Right, Toast } from 'native-base';
-
 import ToolbarButton from '../../toolbar/ToolbarButton';
 import ButtonImage from './ButtonImage';
 import {Workstate} from '../../../state/cap/workstate';
 
 const AddButton = props => {
-  const workstate = props.workstate;
-  const styles = props.styles;
-  
-  const isDisabled = workstate === Workstate.ADD;
   return (
       <ToolbarButton
         action='add'
-        styles={styles}
-        disabled={isDisabled}
+        styles={props.styles}
+        disabled={props.workstate === Workstate.ADD}
         onClick={props.onClick}
       />
   );
 }
 
+const SaveButton = (props) => {
+  const workstate = props.workstate;
+
+  return (
+    <ToolbarButton
+      action='save'
+      styles={props.styles}
+      disabled={!(workstate === Workstate.EDIT || workstate === Workstate.ADD)}
+      onClick={props.onClick}
+    />
+  );
+};
+
 const DeleteButton = props => {
   const workstate = props.workstate;
-  const styles = props.styles;
   
   const isDisabled = (workstate === Workstate.ADD ||
                       workstate === Workstate.SEARCH ||
@@ -30,39 +36,11 @@ const DeleteButton = props => {
 
   return (
       <ToolbarButton
-      action='delete'
-      styles={styles}
-      disabled={isDisabled}
-      onClick={props.onClick}
-    />
-
-  );
-};
-
-// const DeleteButton = (props) => {
-//   const workstate = props.workstate;
-
-//   const isDisabled = (workstate === Workstate.ADD ||
-//                       workstate === Workstate.SEARCH ||
-//                       workstate === Workstate.VIEW_LIST);
-//   const className = isDisabled ? "disabled" : "enabled"
-
-//   return (
-//       <ToolbarButton disabled={isDisabled} onClick={props.onClick}>
-//         <ButtonImage src="./toolbar/delete.png" alt="Удалить" className={className}/>
-//       </ToolbarButton>
-//   );
-// };
-
-const SaveButton = (props) => {
-  const workstate = props.workstate;
-  const isDisabled = !(workstate === Workstate.EDIT || workstate === Workstate.ADD);
-  const className = isDisabled ? "disabled" : "enabled"
-
-  return (
-      <ToolbarButton title="Сохранить" disabled={isDisabled} onClick={props.onClick}>
-        <ButtonImage src="./toolbar/save.png" alt="Сохранить" className={className}/>
-      </ToolbarButton>
+        action='delete'
+        styles={props.styles}
+        disabled={isDisabled}
+        onClick={props.onClick}
+      />
   );
 };
 
@@ -72,26 +50,29 @@ const EditButton = (props) => {
                       workstate === Workstate.EDIT ||
                       workstate === Workstate.VIEW_LIST ||
                       workstate === Workstate.SEARCH);
-  const className = isDisabled ? "disabled" : "enabled"
-
   return (
-      <ToolbarButton title="Редактировать" disabled={isDisabled} onClick={props.onClick}>
-        <ButtonImage src="./toolbar/edit.png" alt="Редактировать" className={className}/>
-      </ToolbarButton>
+    <ToolbarButton
+      action='edit'
+      styles={props.styles}
+      disabled={isDisabled}
+      onClick={props.onClick}
+    />
   );
 };
 
-// const ViewButton = (props) => {
-//   const workstate = props.workstate;
-//   const isDisabled = !(workstate === Workstate.EDIT || workstate === Workstate.SELECTED);
-//   const className = isDisabled ? "disabled" : "enabled"
+const ViewButton = (props) => {
+  const workstate = props.workstate;
+  const isDisabled = !(workstate === Workstate.EDIT || workstate === Workstate.SELECTED);
 
-//   return (
-//       <ToolbarButton disabled={isDisabled} onClick={props.onClick}>
-//         <ButtonImage src="./toolbar/view.png" alt="Смотреть" className={className}/>
-//       </ToolbarButton>
-//   );
-// };
+  return (
+    <ToolbarButton
+      action='view'
+      styles={props.styles}
+      disabled={isDisabled}
+      onClick={props.onClick}
+    />
+  );
+};
 
 // const ListButton = (props) => {
 //   const workstate = props.workstate;
@@ -132,4 +113,4 @@ const EditButton = (props) => {
 // };
 
 //export {AddButton, SaveButton, EditButton, ViewButton, ListButton, SearchButton, FindButton, DeleteButton};
-export {AddButton, SaveButton, EditButton, DeleteButton};
+export {AddButton, SaveButton, EditButton, ViewButton, DeleteButton};

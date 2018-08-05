@@ -62,14 +62,13 @@ export default function(props) {
     //   <FindButton workstate={wrkst} onClick={actions.find}/>
     // </View>
     <Header style={styles.header}>
-      <Left>
-        <AddButton styles={styles} workstate={wrkst} onClick={actions.add}/>
-        {/* <SaveButton styles={styles} workstate={wrkst} onClick={actions.add}/> */}
-      </Left>
       <Right>
+        <AddButton styles={styles} workstate={wrkst} onClick={actions.add}/>
+        <SaveButton styles={styles} workstate={wrkst} onClick={actions.save}/>
+        <EditButton styles={styles} workstate={wrkst} onClick={actions.edit}/>
+        <ViewButton styles={styles} workstate={wrkst} onClick={actions.view}/>
         <DeleteButton styles={styles} workstate={wrkst} onClick={actions.remove}/>
       </Right>
-  </Header>
-
+    </Header>
   );
 };

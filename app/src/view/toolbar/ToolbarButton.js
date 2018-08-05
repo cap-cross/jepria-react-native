@@ -11,6 +11,15 @@ const actionToIconName = action => {
     case 'add': {
       return 'add';
     }
+    case 'save': {
+      return 'ios-arrow-down';
+    }
+    case 'edit': {
+      return 'md-create';
+    }
+    case 'view': {
+      return 'ios-eye';
+    }
     case 'delete': {
       return 'trash';
     }
@@ -24,11 +33,6 @@ export default function(props) {
     e.preventDefault();
     props.onClick();
   };
-
-  console.log("ToolbarButton: props.title = " + props.title);
-  //  console.log('ToolbarButton: props.children = ' + JSON.stringify(props.children));
-  const styles = props.styles;
-
   return props.disabled ? null : 
     <Button
       onPress={() => {
@@ -36,6 +40,6 @@ export default function(props) {
       }}
       transparent
     >
-      <Icon name={actionToIconName(props.action)} style={styles.icon} />
+      <Icon name={actionToIconName(props.action)} style={props.styles.icon} />
     </Button>
 }
