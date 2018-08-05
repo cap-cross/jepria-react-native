@@ -17,7 +17,7 @@ export default function(props) {
       flex: 0.9,
     },
     header: {
-      backgroundColor: DARK_BLUE_COLOR,
+      backgroundColor: 'blue',
     },
     title: {
       color: '#FFFFFF',
@@ -27,7 +27,7 @@ export default function(props) {
       fontSize: 30,
     },
     editButton: {
-      backgroundColor: DARK_AQUA_GREEN_COLOR,
+      backgroundColor: 'green',
       height: 56,
       width: 56,
       borderRadius: 28,
