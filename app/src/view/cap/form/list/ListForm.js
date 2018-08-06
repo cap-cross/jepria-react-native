@@ -10,10 +10,6 @@ class ListForm extends Component {
     items: PropTypes.array.isRequired,
   };
 
-  // state = {
-  //   selected: null
-  // };
-
   renderTaskItem = ({ item }) => (
     <TaskItem
       task={item}
