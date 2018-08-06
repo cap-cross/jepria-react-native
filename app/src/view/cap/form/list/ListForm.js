@@ -10,14 +10,13 @@ class ListForm extends Component {
     items: PropTypes.array.isRequired,
   };
 
-  state = {
-    selected: null
-  };
+  // state = {
+  //   selected: null
+  // };
 
   renderTaskItem = ({ item }) => (
     <TaskItem
       task={item}
-      navigation={this.props.navigation} // eslint-disable-line react/prop-types
       remove={() => this.props.removeTask(item.id)}
     />
   );
