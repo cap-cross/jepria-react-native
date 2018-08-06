@@ -5,8 +5,6 @@ import { Provider,  connect } from 'react-redux';
 import configureStore from './state/cap/redux/store';
 import ReactApp from './view/ReactApp';
 import { add, save, edit, remove, select, viewDetails, viewList, search, find } from './state/cap';
-import log from '@cap-cross/cap-core';
-
 
 const styles = StyleSheet.create({
   container: {

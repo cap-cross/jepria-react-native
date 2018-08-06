@@ -10,15 +10,19 @@ class ListForm extends Component {
     items: PropTypes.array.isRequired,
   };
 
-  renderTaskItem = ({ item }) => (
-    <TaskItem
-      task={item}
-      remove={() => this.props.removeTask(item.id)}
-    />
-  );
+  renderTaskItem = ({ item, index}) => {
+      return (
+        // TODO Устранить избыточность index и task - наследие объединения кода
+        <TaskItem
+          actions={this.props.actions}
+          index={index}
+          task={item}
+          remove={() => this.props.removeTask(item.id)}
+        />
+      );
+    }
 
   render() {
-    const actions = this.props.actions;
     let contentView = <EmptyView text="Нет задач" />; // eslint-disable-line react/prop-types
     const items = this.props.items;
 
@@ -29,7 +33,7 @@ class ListForm extends Component {
           renderItem={this.renderTaskItem}
           keyExtractor={(item, index) => index.toString()} // TODO Проверить корректность
         />
-    );
+      );
     }
 
     const result = (

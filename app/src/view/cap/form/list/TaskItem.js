@@ -5,7 +5,8 @@ import {LIGHT_BLUE_COLOR, LIGHT_AQUA_GREEN_COLOR} from '../../../../../res/style
 
 class TaskItem extends React.PureComponent {
   static propTypes = {
-    task: PropTypes.object.isRequired,
+    index: PropTypes.number,
+    task: PropTypes.object,
     remove: PropTypes.func.isRequired,
   };
 
@@ -27,14 +28,10 @@ class TaskItem extends React.PureComponent {
   });
 
   goToDetailViewTask = () => {
-    // TODO Убедиться, что нет лучшего решения
-//    this.props.setActiveTask(this.props.task);
-//    this.props.navigation.navigate('ViewTask');
-    actions.view(rowInfo.index);
-};
+    this.props.actions.view(this.props.index);
+  };
 
   render() {
-    const actions = this.props.actions;
     const styles = this.getStyles(this.props);
 
     return (
