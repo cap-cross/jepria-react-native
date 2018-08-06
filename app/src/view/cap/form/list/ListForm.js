@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import PropTypes from 'prop-types';
 import EmptyView from './EmptyView';
+import TaskItem from './TaskItem';
 
 class ListForm extends Component {
   static propTypes = {
@@ -13,6 +14,14 @@ class ListForm extends Component {
     selected: null
   };
 
+  renderTaskItem = ({ item }) => (
+    <TaskItem
+      task={item}
+      navigation={this.props.navigation} // eslint-disable-line react/prop-types
+      remove={() => this.props.removeTask(item.id)}
+    />
+  );
+
   render() {
     const actions = this.props.actions;
     let contentView = <EmptyView text="Нет задач" />; // eslint-disable-line react/prop-types
@@ -20,10 +29,12 @@ class ListForm extends Component {
 
     if (items.length > 0) {
       contentView = (
-        <Text>
-          ListForm
-        </Text>
-      );
+        <FlatList
+          data={items}
+          renderItem={this.renderTaskItem}
+          keyExtractor={(item, index) => index.toString()} // TODO Проверить корректность
+        />
+    );
     }
 
     const result = (

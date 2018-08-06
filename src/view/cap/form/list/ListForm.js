@@ -73,7 +73,10 @@ class ListForm extends Component {
         //   columns={columns}
         //   />
         <Text>
-          ListForm
+          <FlatList
+            data={[{key: 'a'}, {key: 'b'}]}
+            renderItem={({item}) => <Text>{item.key}</Text>}
+          />          
         </Text>
       );
     }
