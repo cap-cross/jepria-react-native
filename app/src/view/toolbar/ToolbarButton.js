@@ -1,10 +1,6 @@
 import React from "react";
 import { Button, Icon, Title } from 'native-base';
 
-const style = {
-  backgroundColor: "transparent",
-};
-
 const actionToIconName = action => {
   switch(action) {
     case 'add': {
@@ -26,7 +22,6 @@ const actionToIconName = action => {
       return 'md-search';
     }
     case 'find': {
-//      return 'glasses';
       return 'ios-search';
     }
     case 'remove': {
