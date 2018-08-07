@@ -1,6 +1,5 @@
 import React from "react";
-import { Button, Icon } from 'native-base';
-import { Title } from 'native-base';
+import { Button, Icon, Title } from 'native-base';
 
 const style = {
   backgroundColor: "transparent",
@@ -45,12 +44,12 @@ export default function(props) {
     <Icon name={actionToIconName(action)} style={props.styles.icon} />
 
   return props.disabled ? null : 
-        <Button
-          onPress={() => {
-            props.onClick();
-          }}
-          transparent
-        >
-          {buttonContent}
-        </Button>
+    <Button
+      onPress={() => {
+        props.onClick();
+      }}
+      transparent
+    >
+      {buttonContent}
+    </Button>
 }
