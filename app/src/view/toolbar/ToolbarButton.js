@@ -6,9 +6,6 @@ const actionToIconName = action => {
     case 'add': {
       return 'add';
     }
-    // case 'save': {
-    //   return 'ios-arrow-down';
-    // }
     case 'edit': {
       return 'md-create';
     }
