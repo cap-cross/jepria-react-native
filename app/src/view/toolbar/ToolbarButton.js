@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Icon } from 'native-base';
+import { Button, Icon, Text } from 'native-base';
 
 const style = {
   backgroundColor: "transparent",
@@ -12,6 +12,7 @@ const actionToIconName = action => {
     }
     case 'save': {
       return 'ios-arrow-down';
+      //return null;
     }
     case 'edit': {
       return 'md-create';
@@ -23,10 +24,11 @@ const actionToIconName = action => {
       return 'ios-list';
     }
     case 'search': {
-      return 'ios-search';
+      return 'md-search';
     }
     case 'find': {
-      return 'glasses';
+//      return 'glasses';
+      return 'ios-search';
     }
     case 'remove': {
       return 'trash';
@@ -37,6 +39,8 @@ const actionToIconName = action => {
 };
 
 export default function(props) {
+
+  const iconName = actionToIconName(props.action);
   return props.disabled ? null : 
     <Button
       onPress={() => {
@@ -44,6 +48,10 @@ export default function(props) {
       }}
       transparent
     >
-      <Icon name={actionToIconName(props.action)} style={props.styles.icon} />
+    {
+      iconName ?
+      <Icon name={iconName} style={props.styles.icon} /> :
+      <Text>Готово</Text>
+    }
     </Button>
 }
