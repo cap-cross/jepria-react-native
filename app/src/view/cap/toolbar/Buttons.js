@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ToolbarButton from '../../toolbar/ToolbarButton';
 import {Workstate} from '../../../state/cap/workstate';
 
@@ -15,15 +16,14 @@ const AddButton = props => {
 
 const SaveButton = (props) => {
   const workstate = props.workstate;
-
-  return (
-    <ToolbarButton
-      action='save'
-      styles={props.styles}
-      disabled={!(workstate === Workstate.EDIT || workstate === Workstate.ADD)}
-      onClick={props.onClick}
-    />
-  );
+  const disabled = !(workstate === Workstate.EDIT || workstate === Workstate.ADD);
+  return disabled ? null :
+  <ToolbarButton
+    action='save'
+    styles={props.styles}
+    disabled={disabled}
+    onClick={props.onClick}
+  />
 };
 
 const DeleteButton = props => {

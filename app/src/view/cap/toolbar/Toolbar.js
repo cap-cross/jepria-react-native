@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Body, Left, Right } from 'native-base';
+import { Header, Left, Right } from 'native-base';
 
 import {AddButton, SaveButton, EditButton, ViewButton, ListButton, SearchButton, FindButton, DeleteButton} from '.';
 
