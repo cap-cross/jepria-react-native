@@ -13,9 +13,9 @@ export default function (props) {
 
   return (
     <View>
-      {/* <Field label="Идентификатор" workstate={workstate}>{currentItem ? currentItem.id : ""}</Field>
+      <Field label="Идентификатор" workstate={workstate}>{currentItem ? currentItem.id : ""}</Field>
       <Field label="Наименование" workstate={workstate}>{currentItem ? currentItem.name : ""}</Field>
-      <Field label="Наименование английское" workstate={workstate}>{currentItem ? currentItem.nameEn : ""}</Field>
+      {/* <Field label="Наименование английское" workstate={workstate}>{currentItem ? currentItem.nameEn : ""}</Field>
       <Field label="Описание" workstate={workstate}>{currentItem ? currentItem.description : ""}</Field> */}
     </View>
   );
